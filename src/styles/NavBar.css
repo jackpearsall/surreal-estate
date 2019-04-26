@@ -1,0 +1,38 @@
+.NavBar {
+    background: white;
+    border-bottom: grey solid;
+}
+
+.logo-icon {
+    display: inline-block;
+    padding: 10px;
+}
+
+.logo-text {
+    display: inline-block;
+    padding-right: 100px;
+    font-weight: bold;
+}
+
+.nav {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+.item {
+    display: inline-block;
+    margin: 0px;
+    margin-right: 30px;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    border: solid purple;
+}
+
+.item:hover {
+    background-color: purple;
+    color: white;
+}

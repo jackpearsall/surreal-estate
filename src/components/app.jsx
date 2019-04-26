@@ -1,5 +1,12 @@
 import React from 'react';
+import NavBar from './nav-bar';
+import Properties from './propeties';
+import AddProperty from './add-property';
 import '../styles/app.css';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +18,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-      Hello World
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Properties} />
+          <Route exact path="/add-property" component={AddProperty} />
+        </Switch>
       </div>
     );
   }
