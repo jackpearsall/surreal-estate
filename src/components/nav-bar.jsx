@@ -15,7 +15,9 @@ const NavBar = () => (
 
   <div className="NavBar">
     <div className="logo-icon">
-      <FontAwesomeIcon icon="igloo" size="2x" style={{ color: 'purple' }} />
+      <Link to="/">
+        <FontAwesomeIcon icon="igloo" size="2x" style={{ color: 'purple' }} />
+      </Link>
     </div>
     <div className="logo-text">
     Surreal Estate

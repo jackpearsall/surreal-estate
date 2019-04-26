@@ -1,17 +1,21 @@
 .NavBar {
     background: white;
-    border-bottom: grey solid;
+    border-bottom: grey solid 1px;
 }
 
 .logo-icon {
     display: inline-block;
     padding: 10px;
+    padding-right: 5px;
+    vertical-align: middle;
 }
 
 .logo-text {
     display: inline-block;
-    padding-right: 100px;
+    padding-top:16px;
+    padding-right: 75px;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 .nav {
@@ -19,17 +23,18 @@
     margin: 0px;
     padding: 0px;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .item {
     display: inline-block;
-    margin: 0px;
     margin-right: 30px;
     padding: 10px;
     color: black;
     text-decoration: none;
     border-radius: 25px;
     border: solid purple;
+    font-size: 15px;
 }
 
 .item:hover {
