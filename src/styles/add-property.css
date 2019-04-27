@@ -1,3 +1,55 @@
 .AddProperty {
-    padding: 10px;
+  padding: 10px;
+}
+
+form {
+  padding: 10px;
+  width: 400px;
+  margin: 0 auto;
+}
+  
+label {
+  display: block;
+  padding-bottom: 8px;
+}
+  
+span {
+  display: inline-block;
+  width: 100px;
+}
+  
+input, select {
+  margin-left: 20px;
+  padding: 3px;
+}
+
+input {
+  width: 266px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+}
+
+select {
+  outline: none;
+  border-radius: 25px;
+  width: 275px;
+}
+
+select:active, select:hover {
+  outline: none;
+  cursor: pointer;
+}
+
+button {
+  border-radius: 25px;
+  border: none;
+  width: 100%;
+  padding: 8px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: purple;
+  color: white;
 }
