@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/add-property.css';
+import axios from 'axios';
+
+const baseUrl = 'http://localhost:3000/api/v1';
 
 class AddProperty extends Component {
   state = {
@@ -16,7 +19,21 @@ class AddProperty extends Component {
 
   handleAddProperty = event => {
     event.preventDefault();
-    console.log(this.state.fields);
+    axios.post(`${baseUrl}/PropertyListing`, {
+      title: this.state.fields.title,
+      type: this.state.fields.type,
+      bedrooms: this.state.fields.bedrooms,
+      bathrooms: this.state.fields.bathrooms,
+      price: this.state.fields.price,
+      city: this.state.fields.city,
+      email: this.state.fields.email,
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   handleFieldChange = event => {
