@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/add-property.css';
 import axios from 'axios';
+import Alert from './alert';
 
 const baseUrl = 'http://localhost:3000/api/v1';
 
@@ -14,11 +15,19 @@ class AddProperty extends Component {
       price: 0,
       city: 'Manchester',
       email: '',
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
     },
   };
 
   handleAddProperty = event => {
     event.preventDefault();
+    this.setState({
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
+    });
     axios.post(`${baseUrl}/PropertyListing`, {
       title: this.state.fields.title,
       type: this.state.fields.type,
@@ -28,11 +37,15 @@ class AddProperty extends Component {
       city: this.state.fields.city,
       email: this.state.fields.email,
     })
-      .then(response => {
-        console.log(response);
-      })
+      .then(() => this.setState({
+        isSuccess: true,
+        alertMessage: 'Property added.',
+      }))
       .catch(err => {
-        console.log(err);
+        this.setState({
+          alertMessage: 'Server error. Please try again later.',
+          isError: true,
+        });
       });
   };
 
@@ -48,6 +61,8 @@ class AddProperty extends Component {
   render() {
     return (
       <div className="add-property">
+        {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
+        {this.state.isError && <Alert message={this.state.alertMessage} />}
         <form onSubmit={this.handleAddProperty}>
           <label>
             <span>Title:</span>

@@ -1,21 +1,28 @@
-.AddProperty {
-  padding: 10px;
+.add-property {
+  text-align: center
 }
 
 form {
   padding: 10px;
   width: 400px;
   margin: 0 auto;
+  background-color: white;
+  width: 800px;
+  margin: 50px;
+  display: inline-block;
 }
   
 label {
   display: block;
   padding-bottom: 8px;
+  text-align: left;
 }
   
 span {
   display: inline-block;
   width: 100px;
+  text-align: left;
+  margin: 10px; 
 }
   
 input, select {
@@ -25,9 +32,8 @@ input, select {
 
 input {
   width: 266px;
-  border-radius: 25px;
   outline: none;
-  border: none;
+  border: solid black 1px;
 }
 
 select {
@@ -42,14 +48,16 @@ select:active, select:hover {
 }
 
 button {
-  border-radius: 25px;
   border: none;
-  width: 100%;
   padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  background-color: purple;
+  color: white;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: purple;
-  color: white;
+  background-color: lightgray;
+  color: black;
 }
