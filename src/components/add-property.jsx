@@ -61,9 +61,9 @@ class AddProperty extends Component {
   render() {
     return (
       <div className="add-property">
-        {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
-        {this.state.isError && <Alert message={this.state.alertMessage} />}
         <form onSubmit={this.handleAddProperty}>
+          {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
+          {this.state.isError && <Alert message={this.state.alertMessage} />}
           <label>
             <span>Title:</span>
             <input name="title" value={this.state.fields.title} type="text" placeholder="The property title" onChange={this.handleFieldChange} />

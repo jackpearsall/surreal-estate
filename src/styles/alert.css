@@ -1,0 +1,10 @@
+.alert {
+    display: block;
+    text-align: left;
+    color: red;
+}
+
+.alert.success {
+    display: block;
+    color: green;
+}

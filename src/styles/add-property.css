@@ -3,7 +3,7 @@
 }
 
 form {
-  padding: 10px;
+  padding: 20px;
   width: 400px;
   margin: 0 auto;
   background-color: white;
@@ -22,7 +22,8 @@ span {
   display: inline-block;
   width: 100px;
   text-align: left;
-  margin: 10px; 
+  padding: 10px; 
+  padding-left: 0px;
 }
   
 input, select {
