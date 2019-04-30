@@ -9,19 +9,18 @@ form {
   background-color: white;
   width: 800px;
   margin: 50px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
   
 label {
-  display: block;
-  padding-bottom: 8px;
-  text-align: left;
+  display: flex;
+  padding-bottom: 35px;
 }
   
 span {
-  display: inline-block;
+  display: flex;
   width: 100px;
-  text-align: left;
   padding: 10px; 
   padding-left: 0px;
 }
@@ -49,10 +48,9 @@ select:active, select:hover {
 }
 
 button {
+  width: 60px;
   border: none;
   padding: 8px;
-  display: flex;
-  justify-content: space-between;
   background-color: purple;
   color: white;
 }

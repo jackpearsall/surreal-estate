@@ -1,0 +1,9 @@
+.property-card {
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    width: 800px;
+    margin: 50px;
+    display: inline-block;
+}
