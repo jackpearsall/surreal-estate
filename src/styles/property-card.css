@@ -7,3 +7,12 @@
     margin: 50px;
     display: inline-block;
 }
+
+.icon {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.card-type-city {
+    font-style: italic;
+}
