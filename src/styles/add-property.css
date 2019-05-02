@@ -7,10 +7,9 @@ form {
   width: 400px;
   margin: 0 auto;
   background-color: white;
-  width: 800px;
+  width: 50%;
   margin: 50px;
-  display: flex;
-  flex-direction: column;
+  display: inline-block
 }
   
 label {
@@ -19,7 +18,7 @@ label {
 }
   
 span {
-  display: flex;
+  display: inline-block;
   width: 100px;
   padding: 10px; 
   padding-left: 0px;
@@ -31,6 +30,7 @@ input, select {
 }
 
 input {
+  display: inline-block;
   width: 266px;
   outline: none;
   border: solid black 1px;

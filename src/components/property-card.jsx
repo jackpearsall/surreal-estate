@@ -19,7 +19,7 @@ const Property = props => (
       <li className="card-beds"><div className="icon"> <FontAwesomeIcon icon="bed" /></div>{props.bedrooms}</li>
       <li className="card-baths"><div className="icon"> <FontAwesomeIcon icon="bath" /></div>{props.bathrooms}</li>
       <li className="card-price"><div className="icon"> <FontAwesomeIcon icon="pound-sign" /></div>{props.price}</li>
-      <Link className="card-email" to="/"><div className="icon"> <FontAwesomeIcon icon="envelope" /></div>{props.email}</Link>
+      <Link className="card-email" to="/"><div className="icon"> <FontAwesomeIcon icon="envelope" /></div>Email: {props.email}</Link>
     </ul>
   </div>
 );

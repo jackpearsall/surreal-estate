@@ -17,10 +17,10 @@ const NavBar = () => (
     <div className="logo-icon">
       <Link to="/">
         <FontAwesomeIcon icon="igloo" size="2x" style={{ color: 'purple' }} />
+        <div className="logo-text">
+          Surreal Estate
+        </div>
       </Link>
-    </div>
-    <div className="logo-text">
-    Surreal Estate
     </div>
     <ul className="nav">
       <Link className="item" to="/">View Properties</Link>
