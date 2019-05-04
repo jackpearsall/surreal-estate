@@ -1,12 +1,43 @@
-.icon {
-    display: inline-block;
-    padding-right: 5px;
-}
-
-.card-type-city {
+.property-card {
+    background: white;
+    padding: 10px;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 40px;
+    background: lightgray;
+    font-size: 1.5em;
+    color: purple;
+  }
+  
+  .title {
+    margin-bottom: 8px;
+  }
+  
+  .property-card span {
+    width: auto;
+    padding: 4px;
+  }
+  
+  .property-card .type {
+    padding-left: 0;
+  }
+  
+  .type, .city {
     font-style: italic;
-}
-
-.card-email {
+  }
+    
+  .email-button {
+    display: block;
+    text-align: center;
+    background: purple;
+    padding: 8px;
+    border: 1px solid lightgray;
+    color: white;
+  }
+  
+  .email-button:hover {
+    background: lightgray;
     color: black;
-}
+  }

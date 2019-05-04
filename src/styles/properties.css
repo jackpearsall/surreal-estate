@@ -1,13 +1,26 @@
-.properties {
-  padding: 0.5rem;
-  margin: 10px;
+
+.wrapper {
+  display: flex;
+  max-height: 350px;
 }
-  
-.properties > .col {
-  background-color:white;
-  display: inline-block;
-  width: 31%;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  margin: 20px;
+
+.city-search {
+  width: 15%;
+  height: 100vh;
+}
+
+.city-search a, .city-search span {
+  display: block;
+}
+
+.properties {
+  display: flex;
+  width: 85%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.property-card {
+  margin: 5px;
+  width: 30%;
 }

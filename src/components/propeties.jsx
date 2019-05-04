@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Property from './property-card';
 import axios from 'axios';
 import Alert from './alert';
@@ -19,7 +20,7 @@ class Properties extends React.Component {
   componentDidMount() {
     axios.get(`${baseUrl}/PropertyListing`)
       .then(({ data: properties }) => this.setState({ properties }))
-      .catch(err => {
+      .catch(() => {
         this.setState({
           error: true,
           alertMessage: 'There was a problem retrieving the properties, please try again later',
@@ -27,16 +28,45 @@ class Properties extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps) {
+    const { search } = this.props.location;
+    if (prevProps.location.search !== search) {
+      axios.get(`${baseUrl}/PropertyListing${search}`)
+        .then(({ data: properties }) => {
+          this.setState({ properties });
+        })
+        .catch(() => {
+          this.setState({
+            error: true,
+            alertMessage: 'There was a problem retrieving the properties, please try again later',
+          });
+        });
+    }
+  }
+
   render() {
     return (
-      <div className="properties">
+      <Fragment>
         {this.state.error && <Alert message={this.state.alertMessage} />}
-        {this.state.properties.map(property => (
-          <div key={property._id} className="col">
-            <Property {...property} />
+        <div className="wrapper">
+          <div className="city-search">
+            <span>Filter by city</span>
+            <Link to={''}>All</Link>
+            <Link to={'/?query={"city": "Manchester"}'}>Manchester</Link>
+            <Link to={'/?query={"city": "Leeds"}'}>Leeds</Link>
+            <Link to={'/?query={"city": "Sheffield"}'}>Sheffield</Link>
+            <Link to={'/?query={"city": "Liverpool"}'}>Liverpool</Link>
           </div>
-        ))}
-      </div>
+          <div className="properties">
+            {this.state.properties.map(property => (
+              <Property 
+                key={property._id}
+                {...property}
+              />
+            ))}
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }

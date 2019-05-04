@@ -41,7 +41,7 @@ class AddProperty extends Component {
         isSuccess: true,
         alertMessage: 'Property added.',
       }))
-      .catch(err => {
+      .catch(() => {
         this.setState({
           alertMessage: 'Server error. Please try again later.',
           isError: true,

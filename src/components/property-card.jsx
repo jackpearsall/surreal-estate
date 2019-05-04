@@ -6,21 +6,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPoundSign, faBath, faBed, faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 
 library.add(faPoundSign, faBath, faBed, faEnvelope);
 
 const Property = props => (
   <div className="property-card">
-    <h3 className="card-title">{props.title}</h3>
-    <p className="card-type-city">{props.type} - {props.city}</p>
-    <ul className="card-details">
-      <li className="card-beds"><div className="icon"> <FontAwesomeIcon icon="bed" /></div>{props.bedrooms}</li>
-      <li className="card-baths"><div className="icon"> <FontAwesomeIcon icon="bath" /></div>{props.bathrooms}</li>
-      <li className="card-price"><div className="icon"> <FontAwesomeIcon icon="pound-sign" /></div>{props.price}</li>
-      <Link className="card-email" to="/"><div className="icon"> <FontAwesomeIcon icon="envelope" /></div>Email: {props.email}</Link>
-    </ul>
+    <div className="header">
+      <FontAwesomeIcon icon="igloo" className="logo-icon fa-lg" />
+    </div>
+    <h4 className="title">{props.title}</h4>
+    <div>
+      <span className="type">{props.type}</span>
+        -
+      <span className="city">{props.city}</span>
+    </div>
+    <div>
+      <FontAwesomeIcon icon="bath" />
+      <span className="bathrooms">{props.bathrooms}</span>
+    </div>
+    <div>
+      <FontAwesomeIcon icon="bed" />
+      <span className="bedrooms">{props.bedrooms}</span>
+    </div>
+    <div>
+      <FontAwesomeIcon icon="pound-sign" />
+      <span className="price">{props.price}</span>
+    </div>
+    <div className="email" />
+    <a className="email-button" href={`mailto:${props.email}?Subject="${props.title}" target="_top"`}>
+      <FontAwesomeIcon icon="envelope" />
+      <span>Email</span>
+    </a>
   </div>
 );
 
