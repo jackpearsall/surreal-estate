@@ -1,16 +1,36 @@
-
 .wrapper {
   display: flex;
   max-height: 350px;
 }
 
-.city-search {
+.filters {
   width: 15%;
-  height: 100vh;
 }
 
-.city-search a, .city-search span {
+.city-search a, .city-search span, .price-sort span, .price-sort a {
   display: block;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+}
+
+.filters span, .city-search span {
+  padding-right: 0px;
+  margin:5px;
+  background-color: purple;
+  color: white;
+  width: auto;
+}
+
+.city-search a, .price-sort a {
+  margin:5px;
+  padding-left: 30px;
+  padding:10px;
+}
+
+.filters a:hover {
+  background-color: purple;
+  color: white;
 }
 
 .properties {
