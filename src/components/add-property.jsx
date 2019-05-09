@@ -15,10 +15,10 @@ class AddProperty extends Component {
       price: 0,
       city: 'Manchester',
       email: '',
-      alertMessage: '',
-      isSuccess: false,
-      isError: false,
     },
+    alertMessage: '',
+    isSuccess: false,
+    isError: false,
   };
 
   handleAddProperty = event => {
@@ -61,7 +61,7 @@ class AddProperty extends Component {
   render() {
     return (
       <div className="add-property">
-        <form onSubmit={this.handleAddProperty}>
+        <form className="add-property-form" onSubmit={this.handleAddProperty}>
           {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
           {this.state.isError && <Alert message={this.state.alertMessage} />}
           <label>

@@ -1,8 +1,4 @@
-.add-property {
-  text-align: center
-}
-
-form {
+.add-property-form {
   padding: 20px;
   width: 400px;
   margin: 0 auto;
@@ -12,24 +8,24 @@ form {
   display: inline-  
 }
   
-label {
+.add-property label {
   display: flex;
   padding-bottom: 35px;
 }
   
-span {
+.add-property span {
   display: inline-block;
   width: 100px;
   padding: 10px; 
   padding-left: 0px;
 }
   
-input, select {
+.add-property input, select {
   margin-left: 20px;
   padding: 3px;
 }
 
-input {
+.add-property input {
   display: inline-block;
   width: 266px;
   outline: none;
@@ -47,7 +43,7 @@ select:active, select:hover {
   cursor: pointer;
 }
 
-button {
+.add-property button {
   width: 60px;
   border: none;
   padding: 8px;
@@ -55,7 +51,7 @@ button {
   color: white;
 }
 
-button:hover {
+.add-property button:hover {
   cursor: pointer;
   background-color: lightgray;
   color: black;

@@ -5,6 +5,12 @@ import axios from 'axios';
 import Alert from './alert';
 import qs from 'qs';
 import '../styles/properties.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faSearch);
+
 
 const baseUrl = 'http://localhost:3000/api/v1';
 
@@ -15,6 +21,7 @@ class Properties extends React.Component {
       properties: [],
       error: false,
       alertMessage: '',
+      search: '',
     };
   }
 
@@ -50,9 +57,21 @@ class Properties extends React.Component {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || '{}'),
+        ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    const { search } = this.state;
+    const newQueryString = this.buildQueryString('query', { title: { $regex: search } });
+    const { history } = this.props;
+    history.push(newQueryString);
+    this.state.search = '';
   };
 
   render() {
@@ -61,6 +80,17 @@ class Properties extends React.Component {
         {this.state.error && <Alert message={this.state.alertMessage} />}
         <div className="wrapper">
           <div className="filters">
+            <div className="title-search">
+              <span> Search by title</span>
+              <form onSubmit={this.handleSearch}>
+                <input
+                  type="text"
+                  value={this.state.search}
+                  onChange={event => this.setState({ search: event.target.value })}
+                />
+                <button type="submit"><FontAwesomeIcon icon="search" /></button>
+              </form>
+            </div>
             <div className="city-search">
               <span>Filter by city</span>
               <Link to={''}>All</Link>

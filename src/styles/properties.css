@@ -7,25 +7,30 @@
   width: 15%;
 }
 
-.city-search a, .city-search span, .price-sort span, .price-sort a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  padding-left: 10px;
-}
-
-.filters span, .city-search span {
-  padding-right: 0px;
+.filters span {
+  display: flex;
+  padding: 10px;
   margin:5px;
   background-color: purple;
   color: white;
   width: auto;
 }
 
-.city-search a, .price-sort a {
-  margin:5px;
-  padding-left: 30px;
+.title-search form {
+  display: flex;
+  width: calc(100% - 44px);
+  padding: 5x;
+  margin: 5px;
+  height: 29px;
+}
+
+.filters a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
   padding:10px;
+  margin:5px;
 }
 
 .filters a:hover {
