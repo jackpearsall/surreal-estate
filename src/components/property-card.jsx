@@ -4,11 +4,11 @@ import '../styles/property-card.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPoundSign, faBath, faBed, faEnvelope,
+  faPoundSign, faBath, faBed, faEnvelope, faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
 
-library.add(faPoundSign, faBath, faBed, faEnvelope);
+library.add(faPoundSign, faBath, faBed, faEnvelope, faStar);
 
 const Property = props => (
   <div className="property-card">
@@ -34,10 +34,19 @@ const Property = props => (
       <span className="price">{props.price}</span>
     </div>
     <div className="email" />
-    <a className="email-button" href={`mailto:${props.email}?Subject="${props.title}" target="_top"`}>
+    <a className="email-button" href={`mailto:${props.email}?Subject="${props.title}"`}>
       <FontAwesomeIcon icon="envelope" />
       <span>Email</span>
     </a>
+    {props.userID && (
+    <a
+      href="#"
+      onClick={() => props.onSaveProperty(props._id)}
+      className="save"
+    >
+      <FontAwesomeIcon icon="star" /> Save
+    </a>
+    )}
   </div>
 );
 

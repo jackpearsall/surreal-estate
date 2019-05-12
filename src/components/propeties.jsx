@@ -74,6 +74,14 @@ class Properties extends React.Component {
     this.state.search = '';
   };
 
+  handleSaveProperty = (propertyId) => {
+    const { userID } = this.props;
+    axios.post('http://localhost:3000/api/v1/Favourite', {
+      propertyListing: propertyId,
+      fbUserId: userID,
+    });
+  };
+
   render() {
     return (
       <Fragment>
@@ -111,6 +119,7 @@ class Properties extends React.Component {
                 key={property._id}
                 {...property}
                 userID={this.props.userID}
+                onSaveProperty={this.handleSaveProperty}
               />
             ))}
           </div>

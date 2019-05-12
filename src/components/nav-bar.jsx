@@ -26,17 +26,19 @@ const NavBar = (props) => (
     <div className="nav">
       <Link className="item" to="/">View Properties</Link>
       <Link className="item" to="/add-property">Add a Property</Link>
-      {props.userID ? (<button className="item" onClick={props.onLogout}>Sign Out</button>)
-        : (
-          <FacebookLogin
-            appId={2067484850218682}
-            autoLoad
-            callback={props.onLogin}
-          >
-        Sign In With Facebook
-          </FacebookLogin>
-        )
-      }
+      <div className="auth">
+        {props.userID ? (<button className="item" onClick={props.onLogout}>Sign Out</button>)
+          : (
+            <FacebookLogin
+              appId={2067484850218682}
+              autoLoad
+              callback={props.onLogin}
+            >
+          Sign In With Facebook
+            </FacebookLogin>
+          )
+        }
+      </div>
     </div>
   </div>
 );

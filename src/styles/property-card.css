@@ -27,16 +27,18 @@
     font-style: italic;
   }
     
-  .email-button {
+  .email-button, .save {
     display: block;
     text-align: center;
+    text-decoration: none;
     background: purple;
     padding: 8px;
     border: 1px solid lightgray;
     color: white;
   }
   
-  .email-button:hover {
+  .email-button:hover, .save:hover {
     background: lightgray;
     color: black;
   }
+  

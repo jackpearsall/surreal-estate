@@ -18,18 +18,21 @@ describe('Renders a property card for a given property', () => {
     ));
   });
   it('renders the title', () => {
-    expect(wrapper.find('.card-title').text()).toEqual('Test title');
+    expect(wrapper.find('.title').text()).toEqual('Test title');
   });
   it('renders the type', () => {
-    expect(wrapper.find('.card-type').text()).toEqual('Test type');
+    expect(wrapper.find('.type').text()).toEqual('Test type');
   });
   it('renders the number of bedrooms', () => {
-    expect(wrapper.find('.card-beds').text()).toEqual('2 bedroom(s)');
+    expect(wrapper.find('.bedrooms').text()).toEqual('2');
   });
-  it('renders the title', () => {
-    expect(wrapper.find('.card-title').text()).toEqual('Test title');
+  it('renders the number of bedrooms', () => {
+    expect(wrapper.find('.bathrooms').text()).toEqual('2');
   });
-  it('renders the title', () => {
-    expect(wrapper.find('.card-title').text()).toEqual('Test title');
+  it('renders the price', () => {
+    expect(wrapper.find('.price').text()).toEqual('10000');
+  });
+  it('renders the city', () => {
+    expect(wrapper.find('.city').text()).toEqual('Manchester');
   });
 });
