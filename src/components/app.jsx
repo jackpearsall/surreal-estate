@@ -9,18 +9,33 @@ import {
 } from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+  state = {
+    userID: null,
+  };
+
+  handleLogin = (response) => {
+    this.setState({ userID: response.userID });
+  };
+
+  handleLogout = () => {
+    window.FB.logout();
+    this.setState({ userID: null });
+  };
 
   render() {
     return (
       <div className="app">
-        <NavBar />
+        <NavBar
+          onLogin={this.handleLogin}
+          userID={this.state.userID}
+          onLogout={this.handleLogout}
+        />
         <Switch>
-          <Route exact path="/" component={Properties} />
+          <Route
+            exactpath="/"
+            component={Properties}
+            userID={this.state.userID}
+          />
           <Route exact path="/add-property" component={AddProperty} />
         </Switch>
       </div>

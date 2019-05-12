@@ -68,7 +68,7 @@ class Properties extends React.Component {
   handleSearch = event => {
     event.preventDefault();
     const { search } = this.state;
-    const newQueryString = this.buildQueryString('query', { title: { $regex: search } });
+    const newQueryString = this.buildQueryString('query', { title: { $regex: search.toLocaleLowerCase() } });
     const { history } = this.props;
     history.push(newQueryString);
     this.state.search = '';
@@ -110,6 +110,7 @@ class Properties extends React.Component {
               <Property 
                 key={property._id}
                 {...property}
+                userID={this.props.userID}
               />
             ))}
           </div>

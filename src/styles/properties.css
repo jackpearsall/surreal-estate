@@ -16,12 +16,16 @@
   width: auto;
 }
 
+
 .title-search form {
   display: flex;
-  width: calc(100% - 44px);
   padding: 5x;
   margin: 5px;
   height: 29px;
+}
+
+.title-search input {
+  width: 100%;
 }
 
 .filters a {
