@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { number, string, func } from 'prop-types';
 import '../styles/property-card.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,15 +38,22 @@ const Property = props => (
       <FontAwesomeIcon icon="envelope" />
       <span>Email</span>
     </a>
-    {props.userID && (
-    <a
-      href="#"
-      onClick={() => props.onSaveProperty(props._id)}
-      className="save"
-    >
-      <FontAwesomeIcon icon="star" /> Save
-    </a>
-    )}
+    {props.userID && props.isFavourite === true &&
+        (
+          <div className="saved" onClick={() => props.onRemoveProperty(props._id)}>
+            <FontAwesomeIcon icon="star" />
+            <span>Saved Properties</span>
+          </div>
+        )
+      }
+    { props.userID && !props.isFavourite &&
+      (
+        <div className="save" onClick={() => props.onSaveProperty(props._id)}>
+          <FontAwesomeIcon icon="star" />
+          <span>Save</span>
+        </div>
+      )
+    }
   </div>
 );
 
@@ -58,6 +65,8 @@ Property.propTypes = {
   price: number.isRequired,
   city: string.isRequired,
   email: string.isRequired,
+  userId: string,
+  onSaveProperty: func.isRequired,
 };
 
 export default Property;

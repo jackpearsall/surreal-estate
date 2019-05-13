@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../styles/add-property.css';
 import axios from 'axios';
 import Alert from './alert';
-
-const baseUrl = 'http://localhost:3000/api/v1';
+import baseURL from '../config';
 
 class AddProperty extends Component {
   state = {
@@ -28,7 +27,7 @@ class AddProperty extends Component {
       isSuccess: false,
       isError: false,
     });
-    axios.post(`${baseUrl}/PropertyListing`, {
+    axios.post(`${baseURL}/PropertyListing`, {
       title: this.state.fields.title,
       type: this.state.fields.type,
       bedrooms: this.state.fields.bedrooms,

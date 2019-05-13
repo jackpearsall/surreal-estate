@@ -8,11 +8,9 @@ import '../styles/properties.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import baseURL from '../config';
 
 library.add(faSearch);
-
-
-const baseUrl = 'http://localhost:3000/api/v1';
 
 class Properties extends React.Component {
   constructor(props) {
@@ -26,7 +24,7 @@ class Properties extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${baseUrl}/PropertyListing`)
+    axios.get(`${baseURL}/PropertyListing`)
       .then(({ data: properties }) => this.setState({ properties }))
       .catch(() => {
         this.setState({
@@ -39,7 +37,7 @@ class Properties extends React.Component {
   componentDidUpdate(prevProps) {
     const { search } = this.props.location;
     if (prevProps.location.search !== search) {
-      axios.get(`${baseUrl}/PropertyListing${search}`)
+      axios.get(`${baseURL}/PropertyListing${search}`)
         .then(({ data: properties }) => {
           this.setState({ properties });
         })
@@ -76,7 +74,7 @@ class Properties extends React.Component {
 
   handleSaveProperty = (propertyId) => {
     const { userID } = this.props;
-    axios.post('http://localhost:3000/api/v1/Favourite', {
+    axios.post(`${baseURL}/Favourite`, {
       propertyListing: propertyId,
       fbUserId: userID,
     });
@@ -120,6 +118,8 @@ class Properties extends React.Component {
                 {...property}
                 userID={this.props.userID}
                 onSaveProperty={this.handleSaveProperty}
+                onRemoveProperty={this.handleRemoveProperty}
+
               />
             ))}
           </div>

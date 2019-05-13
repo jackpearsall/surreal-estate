@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/nav-bar.css';
 import FacebookLogin from 'react-facebook-login';
@@ -9,8 +9,6 @@ import { faIgloo } from '@fortawesome/free-solid-svg-icons';
 
 
 library.add(faIgloo);
-
-// import PropTypes from 'prop-types';
 
 const NavBar = (props) => (
 
@@ -27,14 +25,20 @@ const NavBar = (props) => (
       <Link className="item" to="/">View Properties</Link>
       <Link className="item" to="/add-property">Add a Property</Link>
       <div className="auth">
-        {props.userID ? (<button className="item" onClick={props.onLogout}>Sign Out</button>)
+        {props.userID
+          ? (
+            <Fragment>
+              <Link onClick={props.onLogout} className="item" to="/">Sign Out</Link>
+              <Link className="item" to="/saved-properties">Saved Properties</Link>
+            </Fragment>
+          )
           : (
             <FacebookLogin
               appId={2067484850218682}
               autoLoad
               callback={props.onLogin}
             >
-          Sign In With Facebook
+              Sign In With Facebook
             </FacebookLogin>
           )
         }

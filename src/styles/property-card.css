@@ -41,4 +41,19 @@
     background: lightgray;
     color: black;
   }
+
+  .saved {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: lightgray;
+    padding: 8px;
+    border: 1px solid purple;
+    color: black;
+  }
+  
+  .saved:hover {
+    background: purple;
+    color: white;
+  }
   
