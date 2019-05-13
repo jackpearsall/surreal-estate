@@ -33,11 +33,6 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            import React from 'react';
-import { shallow } from 'enzyme';
-import Property from '../../src/components/property-cardimport React from 'react';
-import { shallow } from 'enzyme';
-import Property from '../../src/components/property-cardpath="/"
             render={props => <Properties {...props} userID={this.state.userID} />}
           />
           <Route exact path="/add-property" component={AddProperty} />
